@@ -174,6 +174,7 @@
     <Content Include="Views\Kategori\KategoriDuzenle.cshtml" />
     <Content Include="Views\Urun\Index.cshtml" />
     <Content Include="Views\Urun\YeniUrun.cshtml" />
+    <Content Include="Views\Urun\UrunGetir.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
