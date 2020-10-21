@@ -12,7 +12,8 @@ namespace MVC_TicariOtomasyon.Models.Siniflar
         [Key]
         public int GiderID { get; set; }
         [Column(TypeName = "VARCHAR")]
-        [StringLength(100)]
+        [StringLength(100, ErrorMessage = "En fazla 100 karakterden oluşan bir açıklama metni giriniz.")]
+        [Required(ErrorMessage = "Bu alanı boş bırakamazsınız.")]
         public string Aciklama { get; set; }
         public DateTime Tarih { get; set; }
         public decimal Tutar { get; set; }

@@ -145,8 +145,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CariController.cs" />
     <Compile Include="Controllers\DepartmanController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
+    <Compile Include="Controllers\PersonelController.cs" />
     <Compile Include="Controllers\UrunController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -181,6 +183,13 @@
     <Content Include="Views\Departman\DepartmanGetir.cshtml" />
     <Content Include="Views\Departman\DepartmanDetay.cshtml" />
     <Content Include="Views\Departman\PersonelSatisDetay.cshtml" />
+    <Content Include="Views\Cari\Index.cshtml" />
+    <Content Include="Views\Cari\CariEkle.cshtml" />
+    <Content Include="Views\Cari\CariGetir.cshtml" />
+    <Content Include="Views\Cari\MusteriSatis.cshtml" />
+    <Content Include="Views\Personel\Index.cshtml" />
+    <Content Include="Views\Personel\PersonelEkle.cshtml" />
+    <Content Include="Views\Personel\PersonelGetir.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

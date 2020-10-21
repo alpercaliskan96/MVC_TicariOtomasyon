@@ -12,7 +12,8 @@ namespace MVC_TicariOtomasyon.Models.Siniflar
         [Key]
         public int DepartmanID { get; set; }
         [Column(TypeName = "VARCHAR")]
-        [StringLength(30)]
+        [StringLength(30, ErrorMessage = "En fazla 30 karakterden oluşan bir departman ismi giriniz.")]
+        [Required(ErrorMessage = "Bu alanı boş bırakamazsınız.")]
         public string DepartmanAd { get; set; }
         public bool Durum { get; set; }
         public ICollection<Personel> Personels { get; set; }

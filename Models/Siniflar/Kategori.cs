@@ -12,7 +12,8 @@ namespace MVC_TicariOtomasyon.Models.Siniflar
         [Key]
         public int KategoriID { get; set; }
         [Column(TypeName = "VARCHAR")]
-        [StringLength(30)]
+        [StringLength(30, ErrorMessage = "En fazla 30 karakterden oluşan bir isim giriniz.")]
+        [Required(ErrorMessage = "Bu alanı boş bırakamazsınız.")]
         public string KategoriAd { get; set; }
         public ICollection<Urunler> Urunlers  { get; set; }
     }
