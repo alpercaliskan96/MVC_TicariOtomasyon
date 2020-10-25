@@ -7,16 +7,17 @@
 
 <h2>Personeller</h2>
 <br />
-<table class="table table-striped" style="margin-top:20px;">
-
-    <tr>
-        <th>Personel ID</th>
-        <th>Personel Adı & Soyadı</th>
-        <th>Personel Görsel</th>
-        <th>Departmanı</th>
-        <th>Güncelle</th>
-        <th>Satışlar</th>
-    </tr>
+<table id="tbl5" class="table table-bordered" style="margin-top:20px;">
+    <thead>
+        <tr>
+            <th>Personel ID</th>
+            <th>Personel Adı & Soyadı</th>
+            <th>Personel Görsel</th>
+            <th>Departmanı</th>
+            <th>Güncelle</th>
+            <th>Satışlar</th>
+        </tr>
+    </thead>
     @foreach (var k in Model)
     {
         <tr>
@@ -31,3 +32,19 @@
 </table>
 
 <a href="/Personel/PersonelEkle" class="btn btn-primary">Personel Ekle</a>
+
+@*CSS PART*@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="~/Content/DataTables/css/dataTables.bootstrap4.min.css" />
+
+@*JS PART*@
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="~/Content/DataTables/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="~/Content/DataTables/js/dataTables.bootstrap4.min.js"></script>
+
+
+<script>
+    $('#tbl5').DataTable();
+</script>

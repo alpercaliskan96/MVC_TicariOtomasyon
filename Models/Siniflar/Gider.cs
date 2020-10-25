@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace MVC_TicariOtomasyon.Models.Siniflar
     {
         [Key]
         public int GiderID { get; set; }
+        [DisplayName("Açıklama Kısmı")]
         [Column(TypeName = "VARCHAR")]
         [StringLength(100, ErrorMessage = "En fazla 100 karakterden oluşan bir açıklama metni giriniz.")]
         [Required(ErrorMessage = "Bu alanı boş bırakamazsınız.")]

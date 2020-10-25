@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace MVC_TicariOtomasyon.Models.Siniflar
     {
         [Key]
         public int UrunID { get; set; }
+        [DisplayName("Ürün Adı")]
         [Column(TypeName ="VARCHAR")]
         [StringLength(30, ErrorMessage = "En fazla 30 karakterden oluşan bir ürün ismi giriniz.")]
         [Required(ErrorMessage = "Bu alanı boş bırakamazsınız.")]
@@ -21,14 +23,17 @@ namespace MVC_TicariOtomasyon.Models.Siniflar
         public string Marka { get; set; }
         [Required(ErrorMessage = "Bu alanı boş bırakamazsınız.")]
         public short Stok { get; set; }
+        [DisplayName("Alış Fiyatı")]
         [Required(ErrorMessage = "Bu alanı boş bırakamazsınız.")]
         public decimal AlisFiyati { get; set; }
+        [DisplayName("Satış Fiyatı")]
         [Required(ErrorMessage = "Bu alanı boş bırakamazsınız.")]
         public decimal SatisFiyati { get; set; }
         [Required(ErrorMessage = "Bu alanı boş bırakamazsınız.")]
         public bool Durum { get; set; }
         [Column(TypeName = "VARCHAR")]
         [StringLength(250)]
+        [DisplayName("Ürün Görseli")]
         [Required(ErrorMessage = "Bu alanı boş bırakamazsınız.")]
         public string UrunGorsel { get; set; }
         public int KategoriID { get; set; }

@@ -29,6 +29,10 @@ namespace MVC_TicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult YeniUrun(Urunler urun)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("YeniUrun");
+            }
             c.Urunlers.Add(urun);
             c.SaveChanges();
             return RedirectToAction("Index");
@@ -48,12 +52,21 @@ namespace MVC_TicariOtomasyon.Controllers
                                                Text = x.KategoriAd,
                                                Value = x.KategoriID.ToString()
                                            }).ToList();
-            ViewBag.val = newVal;
+            ViewBag.val2 = newVal;
+
+            var newKategori = c.Kategoris.ToList();
+            ViewBag.KategoriList = new SelectList(newKategori, "KategoriID", "KategoriAd");
+
+           // ! Testing
             var urun = c.Urunlers.Find(id);
             return View("UrunGetir", urun);
         }
         public ActionResult UrunGuncelle(Urunler u)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("UrunGetir");
+            }
             var urun = c.Urunlers.Find(u.UrunID);
             urun.UrunAd= u.UrunAd;
             urun.Marka= u.Marka;
@@ -65,6 +78,11 @@ namespace MVC_TicariOtomasyon.Controllers
             urun.Durum= u.Durum;
             c.SaveChanges();
             return RedirectToAction("Index");
+        }
+        public ActionResult UrunListesi()
+        {
+            var value = c.Urunlers.ToList();
+            return View(value);
         }
     }
 }

@@ -1,24 +1,26 @@
 ﻿@using MVC_TicariOtomasyon.Models.Siniflar
-@model List<Cari> 
+@model List<Cari>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<br />
-<h2>Cariler Sayfası</h2>
 
-<table class="table table-striped">
-    <tr>
-        <th>Cari ID</th>
-        <th>Ad</th>
-        <th>Soyad</th>
-        <th>Şehir</th>
-        <th>Mail</th>
-        <th>Sil</th>
-        <th>Güncelle</th>
-        <th>Detaylar</th>
-    </tr>
-    @foreach(var k in Model)
+<h2>Cariler Sayfası</h2>
+<br />
+<table id="tbl2" class="table table-bordered style="margin-top:20px;">
+    <thead>
+        <tr>
+            <th>Cari ID</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Şehir</th>
+            <th>Mail</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+            <th>Detaylar</th>
+        </tr>
+    </thead>
+    @foreach (var k in Model)
     {
         <tr>
             <td>@k.CariID</td>
@@ -34,3 +36,19 @@
     }
 </table>
 <a href="/Cari/CariEkle" class="btn btn-info">Yeni Cari Ekle</a>
+
+@*CSS PART*@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="~/Content/DataTables/css/dataTables.bootstrap4.min.css" />
+
+@*JS PART*@
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="~/Content/DataTables/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="~/Content/DataTables/js/dataTables.bootstrap4.min.js"></script>
+
+
+<script>
+    $('#tbl2').DataTable();
+</script>

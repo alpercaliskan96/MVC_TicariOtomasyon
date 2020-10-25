@@ -24,6 +24,10 @@ namespace MVC_TicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult DepartmanEkle(Departman dep)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("DepartmanEkle");
+            }
             c.Departmans.Add(dep);
             c.SaveChanges();
             return RedirectToAction("Index");
@@ -36,12 +40,16 @@ namespace MVC_TicariOtomasyon.Controllers
             return RedirectToAction("Index");
         }
         public ActionResult DepartmanGetir(int id)
-        {
+        {     
             var dep = c.Departmans.Find(id);
             return View("DepartmanGetir", dep);
         }
         public ActionResult DepartmanGuncelle(Departman d)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("DepartmanGetir");
+            }
             var dep = c.Departmans.Find(d.DepartmanID);
             dep.DepartmanAd = d.DepartmanAd;
             c.SaveChanges();

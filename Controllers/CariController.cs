@@ -24,6 +24,10 @@ namespace MVC_TicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult CariEkle(Cari cari)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("CariEkle");
+            }
             c.Caris.Add(cari);
             c.SaveChanges();
             return RedirectToAction("Index");

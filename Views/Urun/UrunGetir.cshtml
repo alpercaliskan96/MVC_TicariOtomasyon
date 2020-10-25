@@ -3,7 +3,7 @@
     ViewBag.Title = "UrunGetir";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-    <br />
+<br />
 <h2>Ürün Güncelleme Sayfası</h2>
 
 <br />
@@ -12,25 +12,34 @@
     @Html.HiddenFor(x => x.KategoriID)
     @Html.LabelFor(x => x.UrunAd)
     @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.UrunAd, "", new { @style = "color:red" })
     <br />
     @Html.LabelFor(x => x.Marka)
     @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Marka, "", new { @style = "color:red" })
     <br />
     @Html.LabelFor(x => x.Stok)
     @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Stok, "", new { @style = "color:red" })
     <br />
     @Html.LabelFor(x => x.AlisFiyati)
     @Html.TextBoxFor(x => x.AlisFiyati, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AlisFiyati, "", new { @style = "color:red" })
     <br />
     @Html.LabelFor(x => x.SatisFiyati)
     @Html.TextBoxFor(x => x.SatisFiyati, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.SatisFiyati, "", new { @style = "color:red" })
     <br />
     @Html.LabelFor(x => x.Kategori.KategoriID)
-    @Html.DropDownListFor(x => x.KategoriID, (List<SelectListItem>)ViewBag.val, new { @class = "form-control" })
-    <br />
-    @Html.LabelFor(x => x.Durum)
-    @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
-    <br />
+    @*@Html.DropDownListFor(x => x.KategoriID, (List<SelectListItem>)ViewBag.val2, new { @class = "form-control" })*@
+    @*@Html.DropDownList("Kategoriid", null, new { @class = "form-control" })*@
+    @Html.DropDownListFor(x => x.KategoriID, ViewBag.KategoriList as SelectList, "---Select---", new { @class = "form-control" })
+    
+<br />
+@Html.LabelFor(x => x.Durum)
+@Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+@Html.ValidationMessageFor(x => x.Durum, "", new { @style = "color:red" })
+<br />
 
-    <button class="btn btn-primary">Güncelle</button>
+<button class="btn btn-primary">Güncelle</button>
 }

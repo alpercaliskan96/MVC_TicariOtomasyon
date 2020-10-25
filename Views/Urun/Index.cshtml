@@ -5,20 +5,23 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Index</h2>
-<table class="table table-bordered">
-    <tr>
-        <th>Ürün ID</th>
-        <th>Ürün Ad</th>
-        <th>Marka</th>
-        <th>Stok</th>
-        <th>Alış Fiyatı</th>
-        <th>Satış Fiyatı</th>
-        <th>Kategori</th>
-        <th>Görsel</th>
-        <th>Güncelle</th>
-        <th>Sil</th>
-    </tr>
+<h2>Ürünler</h2>
+<br />
+<table id="tbl6" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Ürün ID</th>
+            <th>Ürün Ad</th>
+            <th>Marka</th>
+            <th>Stok</th>
+            <th>Alış Fiyatı</th>
+            <th>Satış Fiyatı</th>
+            <th>Kategori</th>
+            <th>Görsel</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
     @foreach (var k in Model)
     {
         <tr>
@@ -37,3 +40,18 @@
 </table>
 
 <a href="/Urun/YeniUrun" class="btn btn-info">Yeni Ürün Ekle</a>
+@*CSS PART*@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="~/Content/DataTables/css/dataTables.bootstrap4.min.css" />
+
+@*JS PART*@
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="~/Content/DataTables/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="~/Content/DataTables/js/dataTables.bootstrap4.min.js"></script>
+
+
+<script>
+    $('#tbl6').DataTable();
+</script>

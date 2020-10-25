@@ -26,6 +26,10 @@ namespace MVC_TicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult KategoriEkle(Kategori k)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("KategoriEkle");
+            }
             c.Kategoris.Add(k);
             c.SaveChanges();
             return RedirectToAction("Index");
@@ -47,6 +51,10 @@ namespace MVC_TicariOtomasyon.Controllers
         //KATEGORI GUNCELLEME ISLEMI
         public ActionResult KategoriGuncelle(Kategori k)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("KategoriDuzenle");
+            }
             var ktg = c.Kategoris.Find(k.KategoriID);
             ktg.KategoriAd = k.KategoriAd;
             c.SaveChanges();

@@ -19,6 +19,7 @@ namespace MVC_TicariOtomasyon.Controllers
         [HttpGet]
         public ActionResult PersonelEkle()
         {
+            
             List<SelectListItem> newVal = (from x in c.Departmans.ToList()
                                            select new SelectListItem
                                            {
@@ -31,6 +32,10 @@ namespace MVC_TicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult PersonelEkle(Personel p)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("PersonelEkle");
+            }
             c.Personels.Add(p);
             c.SaveChanges();
             return RedirectToAction("Index");
@@ -49,6 +54,10 @@ namespace MVC_TicariOtomasyon.Controllers
         }
         public ActionResult PersonelGuncelle(Personel p)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("PersonelGetir");
+            }
             var personel = c.Personels.Find(p.PersonelID);
             personel.PersonelAd = p.PersonelAd;
             personel.PersonelSoyad = p.PersonelSoyad;

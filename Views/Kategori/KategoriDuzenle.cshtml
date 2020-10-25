@@ -13,6 +13,7 @@
         @Html.LabelFor(x => x.KategoriAd)
         @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-control" })
         @Html.HiddenFor(x => x.KategoriID)
+        @Html.ValidationMessageFor(x =>x.KategoriAd, "", new { @style="color:red" } )
     </div>
     <button class="btn btn-warning">Güncelle</button>
 }
