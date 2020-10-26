@@ -33,41 +33,121 @@
 </head>
 <body>
     <br />
-    <div class="total-content">
-        <div class="list_of_members">
-            <div class="sales" style="background-color:#1abc9c">
-                <div class="icon-text">
-                    <h3>100</h3>
-                    <p>Toplam Cari</p>
-                </div>
-                <div class="clearfix"></div>
+    <div class="card-deck" style="text-align:center">
+        <div class="card">
+            <div class="card-body" style="background-color: #74b9ff">
+                <h5 class="card-title">Toplam Cari Sayısı</h5>
+                <p class="card-text" style="font-size:xx-large">@ViewBag.val1</p>
+                <p class="card-text"><a href="/Cari/Index" class="btn btn-primary">Cariler</a></p>
             </div>
-            <div class="new-users" style="background-color:#2ecc71">
-
-                <div class="icon-text">
-                    <h3>100</h3>
-                    <p>Ürün Sayısı</p>
-                </div>
-                <div class="clearfix"></div>
+        </div>
+        <div class="card">
+            <div class="card-body" style="background-color: #fdcb6e">
+                <h5 class="card-title">Toplam Ürün Sayısı</h5>
+                <p class="card-text" style="font-size:xx-large">@ViewBag.val2</p>
+                <p class="card-text"><a href="/Urun/Index" class="btn btn-primary">Ürünler</a></p>
             </div>
-            <div class="orders" style="background-color:#3498db">
-
-                <div class="icon-text">
-                    <h3>100</h3>
-                    <p>Personel Sayısı</p>
-                </div>
-                <div class="clearfix"></div>
+        </div>
+        <div class="card">
+            <div class="card-body" style="background-color: #55efc4">
+                <h5 class="card-title">Toplam Personel Sayısı</h5>
+                <p class="card-text" style="font-size:xx-large">@ViewBag.val3</p>
+                <p class="card-text"><a href="/Personel/Index" class="btn btn-primary">Personel</a></p>
             </div>
-            <div class="visitors" style="background-color:#9b59b6">
-
-                <div class="icon-text">
-                    <h3>100</h3>
-                    <p>Kategori Sayısı</p>
-                </div>
-                <div class="clearfix"></div>
+        </div>
+        <div class="card">
+            <div class="card-body" style="background-color: #e17055">
+                <h5 class="card-title">Toplam Kategori Sayısı</h5>
+                <p class="card-text" style="font-size:xx-large">@ViewBag.val4</p>
+                <p class="card-text"><a href="/Kategori/Index" class="btn btn-primary">Kategoriler</a></p>
             </div>
         </div>
     </div>
+    <br />
+    <div class="card-deck" style="text-align:center">
+        <div class="card">
+            <div class="card-body" style="background-color: #f7d794">
+                <h5 class="card-title">Toplam Stok Sayısı</h5>
+                <p class="card-text" style="font-size:xx-large">@ViewBag.val5</p>
+                <p class="card-text"><a href="/Urun/Index" class="btn btn-primary">Stok</a></p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" style="background-color: #ff793f">
+                <h5 class="card-title">Toplam Marka Sayısı</h5>
+                <p class="card-text" style="font-size:xx-large">@ViewBag.val6</p>
+                <p class="card-text"><a href="/Urun/Index" class="btn btn-primary">Markalar</a></p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" style="background-color:lightgrey">
+                <h5 class="card-title">Max Marka</h5>
+                <p class="card-text" style="font-size:xx-large">@ViewBag.val10</p>
+                <p class="card-text"><a href="/Urun/Index" class="btn btn-primary">Ürünler</a></p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" style="background-color: #ea8685">
+                <h5 class="card-title">En Çok Satılan Ürün</h5>
+                <p class="card-text" style="font-size:xx-large">@ViewBag.val11</p>
+                <p class="card-text"><a href="/Urun/Index" class="btn btn-primary">Ürünler</a></p>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="card-deck" style="text-align:center">
+        <div class="card">
+            <div class="card-body" style="background-color: #ccae62">
+                <h5 class="card-title">Max Fiyatlı Ürün</h5>
+                <p class="card-text" style="font-size:xx-large">@ViewBag.val8</p>
+                <p class="card-text"><a href="/Urun/Index" class="btn btn-primary">Ürünler</a></p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" style="background-color: #f8a5c2">
+                <h5 class="card-title">Min Fiyatlı Ürün</h5>
+                <p class="card-text" style="font-size:xx-large">@ViewBag.val9</p>
+                <p class="card-text"><a href="/Urun/Index" class="btn btn-primary">Ürünler</a></p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" style="background-color: #84817a">
+                <h5 class="card-title">Kritik Ürünler</h5>
+                <p class="card-text" style="font-size:xx-large">@ViewBag.val7</p>
+                <p class="card-text"><a href="/Urun/Index" class="btn btn-primary">Ürünler</a></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body" style="background-color: #786fa6">
+                <h5 class="card-title">Bugün Satılan Ürün Sayısı</h5>
+                <p class="card-text" style="font-size:xx-large">@ViewBag.val13</p>
+                <p class="card-text"><a href="/Satis/Index" class="btn btn-primary">Satışlar</a></p>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="card-deck" style="text-align:center">
+        <div class="card">
+            <div class="card-body" style="background-color: #487eb0">
+                <h5 class="card-title">Günlük Kasa Tutarı</h5>
+                <p class="card-text" style="font-size:xx-large">@ViewBag.val14</p>
+                <p class="card-text"><a href="/Satis/Index" class="btn btn-primary">Satışlar</a></p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" style="background-color: #7f8fa6">
+                <h5 class="card-title">Kasadaki Tutar</h5>
+                <p class="card-text" style="font-size:xx-large">@ViewBag.val12</p>
+                <p class="card-text"><a href="/Satis/Index" class="btn btn-primary">Satışlar</a></p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
 </body>
 </html>
 
