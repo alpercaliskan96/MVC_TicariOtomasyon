@@ -1,0 +1,35 @@
+﻿@using MVC_TicariOtomasyon.Models.Siniflar
+@model List<FaturaKalem>
+@{
+    ViewBag.Title = "FaturaDetay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Fatura Detay Sayfası</h2>
+
+<br />
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"></li>
+</ol>
+
+<div></div>
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Açıklama</th>
+        <th>Miktar</th>
+        <th>Birim Fiyat</th>
+        <th>Tutar</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.FaturaKalemID</td>
+            <td>@k.Aciklama</td>
+            <td>@k.Miktar</td>
+            <td>@k.BirimFiyat</td>
+            <td>@k.Tutar</td>
+        </tr>
+    }
+</table>
+<a href="/Fatura/YeniKalem/" class="btn btn-primary">Yeni FaturaKalem Girişi</a>

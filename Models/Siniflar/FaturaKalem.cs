@@ -25,6 +25,7 @@ namespace MVC_TicariOtomasyon.Models.Siniflar
         [Required(ErrorMessage = "Bu alanı boş bırakamazsınız.")]
         public decimal Tutar { get; set; }
         [Required(ErrorMessage = "Bu alanı boş bırakamazsınız.")]
-        public Faturalar Faturalar { get; set; }
+        public int FaturaID { get; set; }
+        public virtual Faturalar Faturalar { get; set; }
     }
 }

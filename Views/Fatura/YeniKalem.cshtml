@@ -1,0 +1,32 @@
+﻿@model MVC_TicariOtomasyon.Models.Siniflar.FaturaKalem
+@{
+    ViewBag.Title = "YeniKalem";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Fatura Kalem</h2>
+<br />
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.Aciklama)
+    @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Aciklama, "", new { @style = "color:red" })
+    <br />
+    @Html.LabelFor(x => x.Miktar)
+    @Html.TextBoxFor(x => x.Miktar, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Miktar, "", new { @style = "color:red" })
+    <br />
+    @Html.LabelFor(x => x.BirimFiyat)
+    @Html.TextBoxFor(x => x.BirimFiyat, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.BirimFiyat, "", new { @style = "color:red" })
+    <br />
+    @Html.LabelFor(x => x.Tutar)
+    @Html.TextBoxFor(x => x.Tutar, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Tutar, "", new { @style = "color:red" })
+    <br /> 
+    @Html.LabelFor(x => x.FaturaID)
+    @Html.TextBoxFor(x => x.FaturaID, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.FaturaID, "", new { @style = "color:red" })
+    <br />
+    <button class="btn btn-primary">Kaydet</button>
+</form>

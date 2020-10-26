@@ -35,11 +35,11 @@
     @*@Html.DropDownList("Kategoriid", null, new { @class = "form-control" })*@
     @Html.DropDownListFor(x => x.KategoriID, ViewBag.KategoriList as SelectList, "---Select---", new { @class = "form-control" })
     
-<br />
-@Html.LabelFor(x => x.Durum)
-@Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
-@Html.ValidationMessageFor(x => x.Durum, "", new { @style = "color:red" })
-<br />
+    <br />
+    @Html.LabelFor(x => x.Durum)
+    @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Durum, "", new { @style = "color:red" })
+    <br />
 
-<button class="btn btn-primary">Güncelle</button>
+    <button class="btn btn-primary">Güncelle</button>
 }

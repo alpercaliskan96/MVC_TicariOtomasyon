@@ -1,0 +1,63 @@
+﻿@using MVC_TicariOtomasyon.Models.Siniflar
+@model List<Faturalar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Faturalar</h2>
+<br />
+
+
+<table id="tbl3" class="table table-bordered" style="margin-top:20px;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Fatura Seri No</th>
+            <th>Fatura Sıra No</th>
+            <th>Vergi Dairesi</th>
+            <th>Tarih</th>
+            <th>Saat</th>
+            <th>Teslim Eden</th>
+            <th>Teslim Alan</th>
+            <th>Toplam</th>
+            <th>Güncelle</th>
+            <th>Detay</th>
+        </tr>
+    </thead>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.FaturaID</td>
+            <td>@k.FaturaSeriNo</td>
+            <td>@k.FaturaSiraNo</td>
+            <td>@k.VergiDairesi</td>
+            <td>@k.Tarih</td>
+            <td>@k.Saat</td>
+            <td>@k.TeslimEden</td>
+            <td>@k.TeslimAlan</td>
+            <td>@k.Toplam</td>
+            <td><a href="/Fatura/FaturaGetir/@k.FaturaID" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Fatura/FaturaDetay/@k.FaturaID" class="btn btn-danger" style="background-color:dodgerblue">Fatura Detay</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Fatura/FaturaEkle" class="btn btn-info">Yeni Fatura Ekle</a>
+
+@*CSS PART*@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="~/Content/DataTables/css/dataTables.bootstrap4.min.css" />
+
+@*JS PART*@
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="~/Content/DataTables/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="~/Content/DataTables/js/dataTables.bootstrap4.min.js"></script>
+
+
+<script>
+    $('#tbl3').DataTable();
+</script>
+
