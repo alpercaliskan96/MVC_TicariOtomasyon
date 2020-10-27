@@ -13,6 +13,7 @@ namespace MVC_TicariOtomasyon.Controllers
         // GET: UrunDetay
         public ActionResult Index()
         {
+
             var value = c.Urunlers.Where(x => x.UrunID == 1).ToList();
             return View(value);
         }

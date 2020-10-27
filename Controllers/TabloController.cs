@@ -60,5 +60,18 @@ namespace MVC_TicariOtomasyon.Controllers
             ViewBag.val14 = value14;
             return View();
         }
+        
+        public ActionResult BasicTable()
+        {
+            var value = from x in c.Caris
+                        group x by x.CariSehir into g
+                        select new MiniTablo
+                        {
+                            Sehir = g.Key,
+                            Sayi = g.Count()
+                        };
+
+            return View(value);
+        }
     }
 }
