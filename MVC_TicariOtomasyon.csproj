@@ -2385,6 +2385,7 @@
     <Compile Include="Controllers\TabloController.cs" />
     <Compile Include="Controllers\UrunController.cs" />
     <Compile Include="Controllers\UrunDetayController.cs" />
+    <Compile Include="Controllers\AnasayfaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2400,7 +2401,9 @@
     <Compile Include="Models\Siniflar\MiniTablo.cs" />
     <Compile Include="Models\Siniflar\Personel.cs" />
     <Compile Include="Models\Siniflar\SatisHareket.cs" />
+    <Compile Include="Models\Siniflar\SinifGrup.cs" />
     <Compile Include="Models\Siniflar\Urunler.cs" />
+    <Compile Include="Models\Siniflar\YapilacakListesi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2542,6 +2545,9 @@
     <Content Include="thumber\scss\_site-navbar.scss" />
     <Content Include="Views\UrunDetay\Index.cshtml" />
     <Content Include="Views\Tablo\BasicTable.cshtml" />
+    <Content Include="Views\Tablo\Partial1.cshtml" />
+    <Content Include="Views\Personel\Personel.cshtml" />
+    <Content Include="Views\Anasayfa\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

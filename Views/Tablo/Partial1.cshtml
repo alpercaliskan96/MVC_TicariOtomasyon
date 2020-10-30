@@ -1,0 +1,65 @@
+﻿@model IEnumerable<MVC_TicariOtomasyon.Models.Siniflar.SinifGrup>
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Departman Personel Sayısı</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body p-0">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="width: 10px">#</th>
+                        <th>Departman</th>
+                        <th>Yüzde</th>
+                        <th style="width: 40px">Label</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{ int siraNo3 = 0; }
+                    @foreach (var k in Model)
+                    {
+                        <tr>
+                            <td>@{siraNo3++;} @siraNo3</td>
+                            <td>@k.Departman</td>
+                            <td>
+                                @if (k.Sayi == 1 || k.Sayi == 2 || k.Sayi == 3 || k.Sayi == 4)
+                                {
+                                    <div class="progress progress-xs">
+                                        <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                                    </div>
+                                }
+                                @if (k.Sayi == 5 || k.Sayi == 6 || k.Sayi == 7 || k.Sayi == 8)
+                                {
+                                    <div class="progress progress-xs">
+                                        <div class="progress-bar progress-bar-warning" style="width: 70%"></div>
+                                    </div>
+                                }
+                                @if (k.Sayi >= 9)
+                                {
+                                    <div class="progress progress-xs">
+                                        <div class="progress-bar progress-bar-success" style="width: 70%"></div>
+                                    </div>
+                                }
+                            </td>
+                            <td>
+                                @if (k.Sayi == 1 || k.Sayi == 2 || k.Sayi == 3 || k.Sayi == 4)
+                                {
+                                    <span class="badge bg-info">@k.Sayi</span>
+                                }
+                                @if (k.Sayi == 5 || k.Sayi == 6 || k.Sayi == 7 || k.Sayi == 8)
+                                {
+                                    <span class="badge bg-info">@k.Sayi</span>
+                                }
+                                @if (k.Sayi >= 9)
+                                {
+                                    <span class="badge bg-info">@k.Sayi</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>

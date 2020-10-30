@@ -1,7 +1,7 @@
 ﻿@using MVC_TicariOtomasyon.Models.Siniflar
 @model List<Personel>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Personel";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -52,7 +52,7 @@
                             </div>
                             <div class="card-footer">
                                 <div class="text-left">
-                                    <a href="/Personel/PersonelGetir/@k.PersonelID" class="btn btn-sm btn-success">
+                                    <a href="Personel/PersonelGetir/@k.PersonelID" class="btn btn-sm btn-success">
                                         <i class="fas fa-edit"></i>&nbsp Güncelle
                                     </a>
                                     <a href="/Departman/PersonelSatisDetay/@k.PersonelID" class="btn btn-sm btn-primary">
@@ -86,6 +86,5 @@
     <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
 </body>
 </html>
-
 
 

@@ -73,5 +73,18 @@ namespace MVC_TicariOtomasyon.Controllers
 
             return View(value);
         }
+        // ! BasicTable View kısmı için partialView 
+        // ! Personel Bilgilerini çeker
+        public PartialViewResult Partial1()
+        {
+            var value = from x in c.Personels
+                        group x by x.Departman.DepartmanAd into g
+                        select new SinifGrup
+                        {
+                            Departman = g.Key,
+                            Sayi = g.Count()
+                        };
+            return PartialView(value.ToList());
+        }
     }
 }
