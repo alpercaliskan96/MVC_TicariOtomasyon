@@ -23,8 +23,10 @@
     @Html.ValidationMessageFor(x => x.PersonelGorsel, "", new { @style = "color:red" })
     <br />
     @Html.LabelFor(x => x.Departman)
+    @*@Html.DropDownList("ProcedureID", null, new { @class = "form-control" })*@
     @*@Html.DropDownList("newVal", ViewData["test"] as IEnumerable<SelectListItem>, "Select Department", new { @class = "form-control" })*@
-    @Html.DropDownListFor(x => x.DepartmanID, (List<SelectListItem>)ViewBag.val, "Select Departments", new { @class = "form-control" })
+    @*@Html.DropDownListFor(x => x.DepartmanID, (List<SelectListItem>)ViewBag.val, "Select Departments", new { @class = "form-control" })*@
+    @*@Html.DropDownListFor(model => model.Departman.DepartmanAd, null)*@
     <br />
     <button class="btn btn-info" style="margin-left:50%">Kaydet</button>
 </form>

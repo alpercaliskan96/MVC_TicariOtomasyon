@@ -19,14 +19,13 @@ namespace MVC_TicariOtomasyon.Controllers
         [HttpGet]
         public ActionResult PersonelEkle()
         {
-            
             List<SelectListItem> newVal = (from x in c.Departmans.ToList()
                                            select new SelectListItem
                                            {
                                                Text = x.DepartmanAd,
                                                Value = x.DepartmanID.ToString()
                                            }).ToList();
-            ViewBag.val = newVal;
+            ViewBag.val = newVal;            
             return View();
         }
         [HttpPost]

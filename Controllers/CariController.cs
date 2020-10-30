@@ -13,7 +13,7 @@ namespace MVC_TicariOtomasyon.Controllers
         // GET: Cari
         public ActionResult Index()
         {
-            var value = c.Caris.Where(x=>x.Durum == true).ToList();
+            var value = c.Caris.Where(x => x.Durum == true).ToList();
             return View(value);
         }
         [HttpGet]

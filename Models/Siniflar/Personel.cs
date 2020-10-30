@@ -28,6 +28,9 @@ namespace MVC_TicariOtomasyon.Models.Siniflar
         [Required(ErrorMessage = "Bu alanı boş bırakamazsınız.")]
         public string PersonelGorsel { get; set; }
         public ICollection<SatisHareket> SatisHarekets { get; set; }
+        [Column(TypeName = "int")]  
+        [DisplayName("Personel Departman")]
+        [Required(ErrorMessage = "Bu alanı boş bırakamazsınız.")]
         public int DepartmanID { get; set; }
         public virtual Departman Departman { get; set; }
 
