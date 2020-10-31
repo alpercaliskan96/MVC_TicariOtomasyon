@@ -11,6 +11,7 @@ namespace MVC_TicariOtomasyon.Controllers
     {
         Context c = new Context();
         // GET: Galeri
+        [Authorize]
         public ActionResult Index()
         {
             var value = c.Urunlers.ToList();

@@ -10,13 +10,15 @@ namespace MVC_TicariOtomasyon.Controllers
     public class SatisController : Controller
     {
         // GET: Satis
+        
         Context c = new Context();
+        [Authorize]
         public ActionResult Index()
         {
             var value = c.SatisHarekets.ToList();
             return View(value);
         }
-
+        [Authorize]
         [HttpGet]
         public ActionResult SatisEkle()
         {
@@ -44,6 +46,7 @@ namespace MVC_TicariOtomasyon.Controllers
             ViewBag.value3 = val3;
             return View();
         }
+        [Authorize]
         [HttpPost]
         public ActionResult SatisEkle(SatisHareket satis)
         {
@@ -56,6 +59,7 @@ namespace MVC_TicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        [Authorize]
         public ActionResult SatisGetir(int id)
         {
             List<SelectListItem> val1 = (from x in c.Urunlers.ToList()
@@ -83,6 +87,7 @@ namespace MVC_TicariOtomasyon.Controllers
             var value = c.SatisHarekets.Find(id);
             return View("SatisGetir", value);
         }
+        [Authorize]
         public ActionResult SatisGuncelle(SatisHareket s)
         {
             var value = c.SatisHarekets.Find(s.SatisID);
@@ -96,6 +101,7 @@ namespace MVC_TicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        [Authorize]
         public ActionResult SatisDetay(int id)
         {
             var values = c.SatisHarekets.Where(x => x.SatisID == id).ToList();

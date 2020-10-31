@@ -14,7 +14,7 @@ namespace MVC_TicariOtomasyon.Models.Siniflar
         public int AdminID { get; set; }
         //KullanıcıAdı Kısmı
         [Column(TypeName = "VARCHAR")]
-        [StringLength(10, ErrorMessage = "En fazla 10 karakterden oluşan bir kullanıcı adı giriniz.")]
+        [StringLength(40, ErrorMessage = "En fazla 40 karakterden oluşan bir kullanıcı adı giriniz.")]
         [Required(ErrorMessage = "Bu alanı boş bırakamazsınız.")]
         public string KullaniciAd { get; set; }
         //Şifre Kısmı
@@ -32,5 +32,11 @@ namespace MVC_TicariOtomasyon.Models.Siniflar
         [Column(TypeName = "CHAR")]
         [StringLength(1)]
         public string Yetki { get; set; }
+
+        public bool Aktif { get; set; }
+
+        [Column(TypeName = "NVARCHAR")]
+        [StringLength(10)]
+        public string Sifirlama { get; set; }
     }
 }

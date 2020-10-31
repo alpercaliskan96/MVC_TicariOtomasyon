@@ -11,6 +11,7 @@ namespace MVC_TicariOtomasyon.Controllers
     {
         Context c = new Context();
         // GET: Tablo
+        [Authorize]
         public ActionResult Index()
         {
             var val1 = c.Caris.Count().ToString();
@@ -60,7 +61,7 @@ namespace MVC_TicariOtomasyon.Controllers
             ViewBag.val14 = value14;
             return View();
         }
-        
+        [Authorize]
         public ActionResult BasicTable()
         {
             var value = from x in c.Caris
@@ -75,6 +76,7 @@ namespace MVC_TicariOtomasyon.Controllers
         }
         // ! BasicTable View kısmı için partialView 
         // ! Personel Bilgilerini çeker
+        [Authorize]
         public PartialViewResult Partial1()
         {
             var value = from x in c.Personels

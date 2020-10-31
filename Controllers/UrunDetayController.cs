@@ -11,6 +11,7 @@ namespace MVC_TicariOtomasyon.Controllers
     {
         Context c = new Context();
         // GET: UrunDetay
+        [Authorize]
         public ActionResult Index()
         {
 

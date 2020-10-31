@@ -10,17 +10,20 @@ namespace MVC_TicariOtomasyon.Controllers
     public class FaturaController : Controller
     {
         Context c = new Context();
+        [Authorize]
         // GET: Fatura
         public ActionResult Index()
         {
             var value = c.Faturalars.ToList();
             return View(value);
         }
+        [Authorize]
         [HttpGet]
         public ActionResult FaturaEkle()
         {
             return View();
         }
+        [Authorize]
         [HttpPost]
         public ActionResult FaturaEkle(Faturalar f)
         {
@@ -32,6 +35,7 @@ namespace MVC_TicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        [Authorize]
         public ActionResult FaturaGetir(int id)
         {
             var fatura = c.Faturalars.Find(id);
@@ -54,16 +58,19 @@ namespace MVC_TicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        [Authorize]
         public ActionResult FaturaDetay(int id)
         {
             var value = c.FaturaKalems.Where(x => x.FaturaID == id).ToList();
             return View(value);
         }
+        [Authorize]
         [HttpGet]
         public ActionResult YeniKalem()
         {
             return View();
         }
+        [Authorize]
         [HttpPost]
         public ActionResult YeniKalem(FaturaKalem fk)
         {

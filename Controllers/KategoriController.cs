@@ -11,17 +11,20 @@ namespace MVC_TicariOtomasyon.Controllers
     {
         // GET: Kategori
         Context c = new Context();
+        [Authorize]
         public ActionResult Index()
         {
             var value = c.Kategoris.ToList();
             return View(value);
         }
         //GET 
+        [Authorize]
         [HttpGet]
         public ActionResult KategoriEkle()
         {
             return View();
         }
+        [Authorize]
         //POST KISMI
         [HttpPost]
         public ActionResult KategoriEkle(Kategori k)
@@ -34,6 +37,7 @@ namespace MVC_TicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        [Authorize]
         //KATEGORI SILME ISLEMI
         public ActionResult KategoriSil(int id)
         {
@@ -42,12 +46,14 @@ namespace MVC_TicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        [Authorize]
         //KATEGORI GETIRME ISLEMI
         public ActionResult KategoriDuzenle(int id)
         {
             var ktg = c.Kategoris.Find(id);
             return View("KategoriDuzenle", ktg);
         }
+        [Authorize]
         //KATEGORI GUNCELLEME ISLEMI
         public ActionResult KategoriGuncelle(Kategori k)
         {

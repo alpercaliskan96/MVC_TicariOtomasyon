@@ -11,11 +11,13 @@ namespace MVC_TicariOtomasyon.Controllers
     {
         // GET: Urun
         Context c = new Context();
+        [Authorize]
         public ActionResult Index()
         {
             var urunler = c.Urunlers.Where(x => x.Durum==true).ToList();
             return View(urunler);
         }
+        [Authorize]
         [HttpGet]
         public ActionResult YeniUrun()
         {
@@ -26,6 +28,7 @@ namespace MVC_TicariOtomasyon.Controllers
             ViewBag.val = newVal;
             return View();
         }
+        [Authorize]
         [HttpPost]
         public ActionResult YeniUrun(Urunler urun)
         {
@@ -37,6 +40,7 @@ namespace MVC_TicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        [Authorize]
         public ActionResult UrunSil(int id)
         {
             var urun = c.Urunlers.Find(id);
@@ -44,6 +48,7 @@ namespace MVC_TicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index"); 
         }
+        [Authorize]
         public ActionResult UrunGetir(int id)
         {
             List<SelectListItem> newVal = (from x in c.Kategoris.ToList()
@@ -61,6 +66,7 @@ namespace MVC_TicariOtomasyon.Controllers
             var urun = c.Urunlers.Find(id);
             return View("UrunGetir", urun);
         }
+        [Authorize]
         public ActionResult UrunGuncelle(Urunler u)
         {
             if (!ModelState.IsValid)
@@ -79,6 +85,7 @@ namespace MVC_TicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        [Authorize]
         public ActionResult UrunListesi()
         {
             var value = c.Urunlers.ToList();

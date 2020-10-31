@@ -11,16 +11,19 @@ namespace MVC_TicariOtomasyon.Controllers
     {
         Context c = new Context();
         // GET: Cari
+        [Authorize]
         public ActionResult Index()
         {
             var value = c.Caris.Where(x => x.Durum == true).ToList();
             return View(value);
         }
+        [Authorize]
         [HttpGet]
         public ActionResult CariEkle()
         {
             return View();
         }
+        [Authorize]
         [HttpPost]
         public ActionResult CariEkle(Cari cari)
         {
@@ -32,6 +35,7 @@ namespace MVC_TicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        [Authorize]
         public ActionResult CariSil(int id)
         {
             var cari = c.Caris.Find(id);
@@ -39,11 +43,13 @@ namespace MVC_TicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        [Authorize]
         public ActionResult CariGetir(int id)
         {
             var cari = c.Caris.Find(id);
             return View("CariGetir", cari);
         }
+        [Authorize]
         public ActionResult CariGuncelle(Cari newCari)
         {
             if (!ModelState.IsValid)
@@ -58,6 +64,7 @@ namespace MVC_TicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        [Authorize]
         public ActionResult MusteriSatis(int id)
         {
             var value = c.SatisHarekets.Where(x => x.CariID == id).ToList();

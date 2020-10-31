@@ -11,11 +11,13 @@ namespace MVC_TicariOtomasyon.Controllers
     {
         // GET: Personel
         Context c = new Context();
+        [Authorize]
         public ActionResult Index()
         {
             var value = c.Personels.ToList();
             return View(value);
         }
+        [Authorize]
         [HttpGet]
         public ActionResult PersonelEkle()
         {
@@ -28,6 +30,7 @@ namespace MVC_TicariOtomasyon.Controllers
             ViewBag.val = newVal;            
             return View();
         }
+        [Authorize]
         [HttpPost]
         public ActionResult PersonelEkle(Personel p)
         {
@@ -39,6 +42,7 @@ namespace MVC_TicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        [Authorize]
         public ActionResult PersonelGetir(int id)
         {
             var personel = c.Personels.Find(id);
@@ -51,6 +55,7 @@ namespace MVC_TicariOtomasyon.Controllers
             ViewBag.val = newVal;
             return View("PersonelGetir",personel);
         }
+        [Authorize]
         public ActionResult PersonelGuncelle(Personel p)
         {
             if (!ModelState.IsValid)
@@ -65,6 +70,7 @@ namespace MVC_TicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        [Authorize]
         public ActionResult Personel()
         {
             var value = c.Personels.ToList();

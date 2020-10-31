@@ -10,6 +10,7 @@ namespace MVC_TicariOtomasyon.Controllers
     {
         // GET: Yapilacak
         Context c = new Context();
+        [Authorize]
         public ActionResult Index()
         {
             var value1 = c.Caris.Count().ToString();

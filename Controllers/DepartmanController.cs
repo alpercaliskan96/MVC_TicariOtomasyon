@@ -11,16 +11,19 @@ namespace MVC_TicariOtomasyon.Controllers
     {
         // GET: Departman
         Context c = new Context();
+        [Authorize]
         public ActionResult Index()
         {
             var value = c.Departmans.Where(x=>x.Durum == true).ToList();
             return View(value);
         }
+        [Authorize]
         [HttpGet]
         public ActionResult DepartmanEkle()
         {
             return View();
         }
+        [Authorize]
         [HttpPost]
         public ActionResult DepartmanEkle(Departman dep)
         {
@@ -32,6 +35,7 @@ namespace MVC_TicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        [Authorize]
         public ActionResult DepartmanSil(int id)
         {
             var dep = c.Departmans.Find(id);
@@ -39,6 +43,7 @@ namespace MVC_TicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        [Authorize]
         public ActionResult DepartmanGetir(int id)
         {     
             var dep = c.Departmans.Find(id);
@@ -55,6 +60,7 @@ namespace MVC_TicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        [Authorize]
         public ActionResult DepartmanDetay(int id)
         {
             var value = c.Personels.Where(x => x.PersonelID == id).ToList();
@@ -62,6 +68,7 @@ namespace MVC_TicariOtomasyon.Controllers
             ViewBag.dN = depName;
             return View(value);
         }
+        [Authorize]
         public ActionResult PersonelSatisDetay(int id)
         {
             var value = c.SatisHarekets.Where(x => x.PersonelID == id).ToList();
